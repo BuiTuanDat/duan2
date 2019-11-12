@@ -38,6 +38,7 @@ import com.teamnaqq.androidbaberbooking.Adapter.HomesliderAdapter;
 import com.teamnaqq.androidbaberbooking.Adapter.LookbookAdapter;
 import com.teamnaqq.androidbaberbooking.BookingActivity;
 import com.teamnaqq.androidbaberbooking.Common.Common;
+import com.teamnaqq.androidbaberbooking.HistoryActivity;
 import com.teamnaqq.androidbaberbooking.Interface.IBannerLoadListener;
 import com.teamnaqq.androidbaberbooking.Interface.IBookingInforLoadListener;
 import com.teamnaqq.androidbaberbooking.Interface.IBookingInformationChangeListener;
@@ -100,6 +101,8 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
     void changeBooking() {
         changeBookingFromUser();
     }
+
+
 
     private void changeBookingFromUser() {
         androidx.appcompat.app.AlertDialog.Builder confrimDialog = new androidx.appcompat.app.AlertDialog.Builder(getActivity())
@@ -189,6 +192,11 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
     @OnClick(R.id.card_view_booking)
     void booking() {
         startActivity(new Intent(getActivity(), BookingActivity.class));
+    }
+
+    @OnClick(R.id.card_view_histoy)
+    void openHistoryActivity() {
+        startActivity(new Intent(getActivity(), HistoryActivity.class));
     }
 
     //firestore
@@ -390,4 +398,6 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
     public void onBookingInformationChange() {
         startActivity(new Intent(getActivity(), BookingActivity.class));
     }
+
+
 }
